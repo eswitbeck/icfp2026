@@ -1,0 +1,84 @@
+main(list, list-2):
+  if (list.length)
+    while(list)
+      A = list.pop
+      tmp-list.push
+    main-2(tmp-list)
+  else
+    while(list-2)
+      A = list-2.pop
+      tmp-list.push
+    main-2(tmp-list)
+
+main-2(list):
+  $top
+  A = list.pop
+  # base case: list is 1 element; already sorted
+  swap
+  A = 1
+  A = A - B
+  if (A > 0)
+    # noop
+  else
+    A = list.pop
+    yield A # straight to output
+    goto $top
+  swap
+  tmp-length.push
+  A = 0
+  while(list)
+    swap
+    A = list.pop
+    tmp-list.push
+    A = A + B
+  swap
+  A = tmp-length.pop
+  swap
+  A = A / B
+  avg.push
+  while(tmp-list)
+    A = tmp-list.pop
+    tmp-list-2.push
+  filt(avg, tmp-list-2)
+
+filt(avg, list):
+  A = 1
+  is-less-than.push
+  A = avg.pop
+  swap
+  while (list)
+    A = list.pop
+    A = A - B
+    if (A > 0)
+      A = A + B
+      gt-list.push
+    else
+      A = A + B
+      lt-list.push
+  if (is-less-than)
+    while(lt-list)
+      A = 1
+      sum-list.push
+      A = lt-list.pop
+      tmp-list.push
+    A = sum(sum-list) # not a good way to notate this yet
+    main-2(A::tmp-list)
+  else
+    while(gt-list)
+      A = 1
+      sum-list.push
+      A = gt-list.pop
+      tmp-list.push
+    A = sum(sum-list)
+    main-2(A::tmp-list)
+
+sum(list)
+  A = 0
+  swap
+  while(list)
+    A = list.pop
+    swap
+    A = A + B
+    swap
+  swap
+  yield A
