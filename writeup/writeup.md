@@ -49,8 +49,9 @@ Rose</em>, this round takes another literary source:
     src="little_men.jpeg"
     alt="The cover of Little Men, by Louisa May Alcott"
     width="75%"
-    		min-width="340px"
-		max-width="600px"
+    min-width="340px"
+    max-width="600px"
+    max-height="900px"
   />
 </p>
 
@@ -88,17 +89,16 @@ portion of a (suboptimal, and more embarrassingly, broken) sort algorithm
 apparently called
 [meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
 
-[^lisp]:
-```lisp
-(defun half-sort (len l)
-  (if (= 1 len)
-      l
-      (let* ((avg (/ (loop for i in l sum i) len))
-             (less-than (filter (lambda (l) (>= avg l)) l))
-             (greater-than (filter (lambda (l) (< avg l)) l)))
-        (append (half-sort (length less-than) less-than)
-                (half-sort (length greater-than) greater-than)))))
-```
+[^lisp]: ```lisp
+    (defun half-sort (len l)
+      (if (= 1 len)
+          l
+          (let* ((avg (/ (loop for i in l sum i) len))
+                 (less-than (filter (lambda (l) (>= avg l)) l))
+                 (greater-than (filter (lambda (l) (< avg l)) l)))
+            (append (half-sort (length less-than) less-than)
+                    (half-sort (length greater-than) greater-than)))))
+    ```
 
 ## Day 2
 
