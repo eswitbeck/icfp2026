@@ -49,9 +49,7 @@ Rose</em>, this round takes another literary source:
     src="little_men.jpeg"
     alt="The cover of Little Men, by Louisa May Alcott"
     width="75%"
-    min-width="340px"
-    max-width="600px"
-    max-height="900px"
+    height="900px"
   />
 </p>
 
