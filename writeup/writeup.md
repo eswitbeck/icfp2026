@@ -1,6 +1,8 @@
 # Esther vs The Machine at ICFPPC 2026
 _July 28, 2026_
 
+---
+
 <p align="center">
 <em>
 In the era of contests, of AI, and of slop tired and sorry,
@@ -53,7 +55,18 @@ Rose</em>, this round takes another literary source:
 </p>
 
 ...or rather, the little men that, as we all know, run about in our computers to
-make them work.
+make them work. Did I mention the contest usually comes with a sense of humor?
+
+More specifically, participants are given a new programming language of 'little
+men' (represented with `@`, NetHack-style) in 2D ASCII 'rooms' and asked to solve
+a series of increasingly ridiculous problems in it.
+
+```
++----+ Hello!
+|   @|_/
+|    |
++----+
+```
 
 
 
@@ -86,7 +99,8 @@ portion of a (suboptimal, and more embarrassingly, broken) sort algorithm
 apparently called
 [meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
 
-[^lisp]: ```lisp
+[^lisp]:
+    ```lisp
     (defun half-sort (len l)
       (if (= 1 len)
           l
