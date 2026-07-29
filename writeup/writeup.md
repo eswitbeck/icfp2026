@@ -37,7 +37,7 @@ Thus she christened her "group", <strong>Esther vers' The Machine</strong>.
 ---
 
 Yes, a second year, and a second attempt at the [International Conference of
-Functional Programming](https://icfpcontest2026.com/), this time by myself! As a
+Functional Programming contest](https://icfpcontest2026.com/), this time by myself! As a
 prelude refresher, this is a 72-hour annual programming contest. The premise is:
 usually a very hard problem (or a series of problems that ends in something very
 hard), with an open choice of programming language, and a prize of... well,
@@ -62,10 +62,10 @@ men' (represented with `@`, NetHack-style) in 2D ASCII 'rooms' and asked to solv
 a series of increasingly ridiculous problems in it.
 
 ```
-+----+ Hello!
-|   @|_/
-|    |
-+----+
++----+ Hello! +----+
+|   @|_/      |@   |
+|    |   Hi!_/|    |
++----+        +----+
 ```
 
 
