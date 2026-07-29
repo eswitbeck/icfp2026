@@ -1,11 +1,23 @@
 # Esther vs The Machine at ICFPPC 2026
-_July 27, 2026_
+_July 28, 2026_
 
-## [intro]
+<p align="center">
+_In the era of contests, of AI, and of slop tired and sorry,
+_of heroes, and villains, and ideals old and starry,
+_stood those scrappy young upstarts called [self.atari](https://github.com/self-atari/icfp2025/blob/main/writeup/writeup.md).
 
-[last year's teammate]() was preoccupied, winning games at the [US Go
-Congress](). It seemed improper to compete with our team name, so after a bit of
-fiddling, I submitted under the name "Esther vs The Machine".
+_They were [Pandu](https://github.com/prendradjaja) and [Esther](https://github.com/eswitbeck). How they fought to survive!_
+_and by sheer force of will, keep their standing alive_
+_at the ICFP, in two thou' twenty-five._
+
+_But then in 'twenty-six, Pandu reached out by phone.
+_He was out finding wins [over board and with stone!](https://gocongress.org/)_
+_Of the duo remained: just fair Esther, alone._
+
+_As she then found herself on a one-woman team,_
+_to pretend names of old would seem somewhat obscene.
+_Thus she christened her "group", *Esther vers' The Machine*._
+</p>
 
 
 
@@ -34,18 +46,20 @@ solution and figured there was a solution in 8x8 and 13 ticks
 
 ### Reverse a List
 
-portion of a (suboptimal, and more importantly, broken) mean sort implementation
+portion of a (suboptimal, and more embarrassingly, broken) sort algorithm
+apparently called
+[meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
 
-```lisp
-(defun half-sort (len l)
-  (if (= 1 len)
-      l
-      (let* ((avg (/ (loop for i in l sum i) len))
-             (less-than (filter (lambda (l) (>= avg l)) l))
-             (greater-than (filter (lambda (l) (< avg l)) l)))
-        (append (half-sort (length less-than) less-than)
-                (half-sort (length greater-than) greater-than)))))
-```
+[^lisp]: ```lisp
+    (defun half-sort (len l)
+      (if (= 1 len)
+          l
+          (let* ((avg (/ (loop for i in l sum i) len))
+                 (less-than (filter (lambda (l) (>= avg l)) l))
+                 (greater-than (filter (lambda (l) (< avg l)) l)))
+            (append (half-sort (length less-than) less-than)
+                    (half-sort (length greater-than) greater-than)))))
+    ```
 
 ## Day 2
 
@@ -76,8 +90,6 @@ For _Memory_, the task was to
 At the time of the freeze, I was ranked 157 out of 268. Given my team was in the
 bottom 10% last year, I'm counting this as a significant improvement.
 
-
----
 
 [M] The first improvements that look obvious are just taking the square of the
 length, adding a few rows experimentally for redirection, and compressing with
