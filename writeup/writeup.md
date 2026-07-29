@@ -2,20 +2,31 @@
 _July 28, 2026_
 
 <p align="center">
-_In the era of contests, of AI, and of slop tired and sorry,
-_of heroes, and villains, and ideals old and starry,
-_stood those scrappy young upstarts called [self.atari](https://github.com/self-atari/icfp2025/blob/main/writeup/writeup.md).
-
+_In the era of contests, of AI, and of slop tired and sorry,_
+</br>
+_of heroes, and villains, and ideals old and starry,_
+</br>
+_stood those scrappy young upstarts called [self.atari](https://github.com/self-atari/icfp2025/blob/main/writeup/writeup.md)._
+</br>
+</br>
 _They were [Pandu](https://github.com/prendradjaja) and [Esther](https://github.com/eswitbeck). How they fought to survive!_
+</br>
 _and by sheer force of will, keep their standing alive_
+</br>
 _at the ICFP, in two thou' twenty-five._
-
-_But then in 'twenty-six, Pandu reached out by phone.
+</br>
+</br>
+_But then in 'twenty-six, Pandu reached out by phone._
+</br>
 _He was out finding wins [over board and with stone!](https://gocongress.org/)_
+</br>
 _Of the duo remained: just fair Esther, alone._
-
+</br>
+</br>
 _As she then found herself on a one-woman team,_
-_to pretend names of old would seem somewhat obscene.
+</br>
+_to pretend names of old would seem somewhat obscene._
+</br>
 _Thus she christened her "group", *Esther vers' The Machine*._
 </p>
 
