@@ -12,14 +12,14 @@ stood those scrappy young upstarts called <a href="https://github.com/self-atari
 </br>
 They were <a href="https://github.com/prendradjaja">Pandu</a> and <a href="https://github.com/eswitbeck">Esther</a>. How they fought to survive!
 </br>
-and by sheer force of will, keep their standing alive
+and by sheer force of will, kept their standing alive
 </br>
 at the ICFP, in two thou' twenty-five.
 </br>
 </br>
 But then in 'twenty-six, Pandu reached out by phone.
 </br>
-He was out finding wins <a href="https://gocongress.org/">over board and with stone!</a>
+He was out finding wins <a href="https://gocongress.org/">over board and with stone</a>!
 </br>
 Of the duo remained: just fair Esther, alone.
 </br>
@@ -31,6 +31,31 @@ to pretend names of old would seem somewhat obscene.
 Thus she christened her "group", <strong>Esther vers' The Machine</strong>.
 </em>
 </p>
+
+---
+
+Yes, a second year, and a second attempt at the [International Conference of
+Functional Programming](https://icfpcontest2026.com/), this time by myself! As a
+prelude refresher, this is a 72-hour annual programming contest. The premise is:
+usually a very hard problem (or a series of problems that ends in something very
+hard), with an open choice of programming language, and a prize of... well,
+winning. There are plenty of solo groups, but teams of any size are allowed so
+competition is steep.
+
+Whereas last year took its thematic inspiration from <em>The Name of the
+Rose</em>, this round takes another literary source:
+<p align="center">
+  <img
+    src="little_men.jpeg"
+    alt="The cover of Little Men, by Louisa May Alcott"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
+
+...or rather, the little men that, as we all know, run about in our computers to
+make them work.
 
 
 
@@ -63,16 +88,17 @@ portion of a (suboptimal, and more embarrassingly, broken) sort algorithm
 apparently called
 [meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
 
-[^lisp]: ```lisp
-    (defun half-sort (len l)
-      (if (= 1 len)
-          l
-          (let* ((avg (/ (loop for i in l sum i) len))
-                 (less-than (filter (lambda (l) (>= avg l)) l))
-                 (greater-than (filter (lambda (l) (< avg l)) l)))
-            (append (half-sort (length less-than) less-than)
-                    (half-sort (length greater-than) greater-than)))))
-    ```
+[^lisp]:
+```lisp
+(defun half-sort (len l)
+  (if (= 1 len)
+      l
+      (let* ((avg (/ (loop for i in l sum i) len))
+             (less-than (filter (lambda (l) (>= avg l)) l))
+             (greater-than (filter (lambda (l) (< avg l)) l)))
+        (append (half-sort (length less-than) less-than)
+                (half-sort (length greater-than) greater-than)))))
+```
 
 ## Day 2
 
@@ -82,8 +108,20 @@ apparently called
 
 ### Please, something
 
-
-
+<p align="center">
+  <img
+    src="history.png"
+    alt="A ranking of my history submission: 149 out of 150"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
+<p align="center"><em>
+    <a href="http://www.harkavagrant.com/index.php?id=125">
+        awww yiss
+    </a>
+</em></p>
 
 [M]
 But that's not what we're here for!
