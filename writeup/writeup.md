@@ -2,32 +2,34 @@
 _July 28, 2026_
 
 <p align="center">
-_In the era of contests, of AI, and of slop tired and sorry,_
+<em>
+In the era of contests, of AI, and of slop tired and sorry,
 </br>
-_of heroes, and villains, and ideals old and starry,_
+of heroes, and villains, and ideals old and starry,
 </br>
-_stood those scrappy young upstarts called [self.atari](https://github.com/self-atari/icfp2025/blob/main/writeup/writeup.md)._
-</br>
-</br>
-_They were [Pandu](https://github.com/prendradjaja) and [Esther](https://github.com/eswitbeck). How they fought to survive!_
-</br>
-_and by sheer force of will, keep their standing alive_
-</br>
-_at the ICFP, in two thou' twenty-five._
+stood those scrappy young upstarts called <a href="https://github.com/self-atari/icfp2025/blob/main/writeup/writeup.md">self.atari</a>.
 </br>
 </br>
-_But then in 'twenty-six, Pandu reached out by phone._
+They were <a href="https://github.com/prendradjaja">Pandu</a> and <a href="https://github.com/eswitbeck">Esther</a>. How they fought to survive!
 </br>
-_He was out finding wins [over board and with stone!](https://gocongress.org/)_
+and by sheer force of will, keep their standing alive
 </br>
-_Of the duo remained: just fair Esther, alone._
+at the ICFP, in two thou' twenty-five.
 </br>
 </br>
-_As she then found herself on a one-woman team,_
+But then in 'twenty-six, Pandu reached out by phone.
 </br>
-_to pretend names of old would seem somewhat obscene._
+He was out finding wins <a href="https://gocongress.org/">over board and with stone!</a>
 </br>
-_Thus she christened her "group", *Esther vers' The Machine*._
+Of the duo remained: just fair Esther, alone.
+</br>
+</br>
+As she then found herself on a one-woman team,
+</br>
+to pretend names of old would seem somewhat obscene.
+</br>
+Thus she christened her "group", <strong>Esther vers' The Machine</strong>.
+</em>
 </p>
 
 
