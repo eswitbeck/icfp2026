@@ -357,6 +357,16 @@ Discouraged, I lost a lot of my pace.
 
 ### Please, something
 
+Trying to return to my second lesson, I decided to discard the sorting problem
+completely. After all, there are points if I can just get _some_ answer to other
+problems. What if I just wrote the dumbest thing I was sure could work?
+
+<em>Problem 5: History</em> was just a program that dumped a specific sequence of
+numbers. What's the dumbest way to write it? I'm talking worst submission that
+still passes. How about a single line that has
+every number typed out and sends them one by one? [dump.lisp](../dump.lisp)
+handled that in the only actual code I wrote this contest.
+
 <p align="center">
   <img
     src="history.png"
@@ -372,9 +382,9 @@ Discouraged, I lost a lot of my pace.
     </a>
 </em></p>
 
-[^history]
-But that's not what we're here for!
-We're doing stupid simple things. On to the next.
+It seems like there are several obvious ways to have improved that
+standing[^history]. But that's not what we're here for! We're doing stupid simple
+things, quickly. On to the next.
 
 [^history]: The first improvements that look obvious are just taking the square of the
     length, adding a few rows experimentally for redirection, and compressing with
@@ -384,6 +394,8 @@ We're doing stupid simple things. On to the next.
 
 [^huffman]: Although apparently other teams considered the encoding and the space cost of
     the codec was too much.
+
+
 
 As a bonus, I realized I could trim an instruction from _Triangle_ and finally
 condense my shape into 8x8. Not the perfect solution yet, but still points!
