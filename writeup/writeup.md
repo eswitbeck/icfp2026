@@ -395,20 +395,97 @@ things, quickly. On to the next.
 [^huffman]: Although apparently other teams considered the encoding and the space cost of
     the codec was too much.
 
+As a bonus and reassurance at this point, I realized I could trim an instruction from _Triangle_ and finally
+condense my shape into 8x8. Not the perfect solution, but still an
+improvement![^rewrite]
 
+[^rewrite]: It turns out I completely forgot that rewriting is a thing, and that
 
-As a bonus, I realized I could trim an instruction from _Triangle_ and finally
-condense my shape into 8x8. Not the perfect solution yet, but still points!
+    $$n(n + 1) / 2 = (n^2 + n) / 2$$
 
-It turns out I completely forgot that rewriting is a thing, and that
+    You never need the 1 in the first place and can just apply `*` `+`. \*sigh\*
 
-$$n(n + 1) / 2 = (n^2 + n) / 2$$
+<p align="center">
+  <img
+    src="triangle_2.png"
+    alt="A slightly more compacted version of the first triangle solution in the
+    debugger"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
 
-You never need the 1 in the first place and can just apply `*` `+`. \*sigh\*
+With the time I had left I turned back to _Problem 2: Memory_, in which we have
+to be able to persist and read back up to 100 values. There were two clear
+approaches: either store the numbers in a pipe (and worry about cycling through
+it) or have little men hold all the numbers. It wasn't too hard to imagine how to
+have a man whose only job was to remember:
 
-For _Memory_, the task was to 
+<p align="center">
+  <img
+    src="cell.png"
+    alt="A tiny room with two paths for reading and writing"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
+<p align="center"><em>My little monk</em></p>
+
+Plus rooms seemed like the dumber idea of the two. Could I just copy paste it 100
+times and have one more little man ask each of them for their number when
+relevant? I could.
+
+<p align="center">
+  <img
+    src="memory-complete.png"
+    alt="That same room, tiled over and over"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
+<p align="center"><em>My little abbey</em></p>
+
+As soon as the memory was working (debugged in the final hours of the contest) it
+started to seem pretty obvious that it could be paired with machine instructions
+instead of worrying about room layouts. Whether or not I could have managed that
+approach was unclear, but it had me regretting leaving the problem until later.
+
+I was completely out of time by then, but had already started to gain some
+fluency with the little man language. At one point I was scribbling out
+unintelligible code in
+my notebook while in a restaurant. Immersion is the best teacher!
+
+<div class="flex" style="align-items:center;">
+  <img
+    src="notes-1.jpeg"
+    alt="That same room, tiled over and over"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+  <img
+    src="notes-2.jpeg"
+    alt="That same room, tiled over and over"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+  <img
+    src="notes-3.jpeg"
+    alt="That same room, tiled over and over"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</div>
+
 
 ## The elephant
+
+---
 
 At the time of the freeze, I was ranked 157 out of 268. Given my team was in the
 bottom 10% last year, I'm counting this as a significant improvement.
