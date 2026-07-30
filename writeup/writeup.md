@@ -284,21 +284,14 @@ connections later.
     independent path?
 
 I figured if I were unusually motivated, maybe I could put something together.
-Besides, lisp macros mean you can skip lexing and parsing altogether and jump
-into the hard part if you design your DSL correctly.
+Besides, lisp macros mean you can skip parsing and start with the hard part directly in an AST if you design your language right!
+My starting point was coming up with a (inefficient, and, more embarrassingly,
+incorrect) rendition of a sort algorithm apparently
+called [meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
 I sketched out the beginnings of what could be a syntax based on what I had done
 so far in [sort.pseudo](../sort.pseudo). I didn't want to start with that, but if
 nothing else it might help me organize my thoughts while I attempted a sorting
 problem by hand.
-
-Reader, I did not write a transpiler.
-
-Instead, I learned that my approach was very misguided.
-
-
-portion of a (suboptimal, and more embarrassingly, broken) sort algorithm
-apparently called
-[meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
 
 [^lisp]: This sloppy mess:
     ```lisp
@@ -315,6 +308,48 @@ apparently called
 
 [^author]: Speaking of <em>Little Women</em>, the (real) algorithm was apparently
     designed by Dalia Motzkin, so that's neat!
+
+
+Reader, I did not write a transpiler.
+
+My approach turned out to be misguided in several ways. First, using bonus pipes
+to signal completion immediately ran into collisions:
+
+<p align="center">
+  <img
+    src="sort-failure.png"
+    alt="Several rooms, terminating in pipes that will be forced to intersect if
+    they continue"
+    width="75%"
+  />
+</p>
+<p align="center"><em>Oh, that magic feeling, nowhere to go!</em></p>
+
+Thankfully, prefixing the length of the list on the same pipe works even better.
+There's a lot of busy work to do the needless copying, but elbow grease got me to
+this layout which divides a list into two lists greater than and less than the
+average (both prefixed with their own lengths).
+
+<p align="center">
+  <img
+    src="filter-complete.png"
+    alt="A slightly more coherent but more complicated layout that ends in two
+    unused rooms"
+    width="75%"
+  />
+</p>
+
+For the sort to work, I just need to recurse by feeding the two lists back into
+the first box
+in order... but now we're back to the problem of stack frames. How do I make sure
+the less thans recurse fully before the greater thans start? One thought I had
+was that, since the list will never be more than 16, you could just do it over
+and over, never returning, for 4 ($$ = log_2(16)$$) iterations, after which each
+half MUST have fully recursed, and then pull the values out of a list that would
+look like `1 -5 1 -4 1 0 1 10`. But I'd still have to fiddle with a lot more flow
+tediousness. It started to look like this was obviously the wrong approach.
+
+Discouraged, I lost a lot of my pace.
 
 ## Day 3
 
