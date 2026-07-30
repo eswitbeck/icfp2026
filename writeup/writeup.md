@@ -66,13 +66,12 @@ men' (represented with `@`, NetHack-style) in 2D ASCII 'rooms' and asked to solv
 a series of increasingly ridiculous problems in it.
 
 <p align="center" style="font-size:20px;">
-```
-+----+ Hello!  +----+
+<code class="language-list">+----+ Hello!  +----+
 |   @|_/       |    |
 |    |         |@   |
 |    |    Hi!_/|    |
 +----+         +----+
-```
+</code>
 </p>
 
 There are 12 problems to start, with 4 to be added after the 'Lightning Round' of
@@ -94,13 +93,12 @@ they have to send numbers to each other through 'pipes', which I like to imagine
 tin-can telephones.
 
 <p align="center" style="font-size:20px;">
-<code class="language-lisp">
-+----+         +----+
+<code class="language-lisp">+----+         +----+     
 |   @|>----v   |   Got it!
-|    |\    >-->|@_/ | 
-|    | \       |    |
-+----+ Sending +----+
-        a 1!  
+|    |\    >-->|@_/ |     
+|    | \       |    |     
++----+ Sending +----+     
+        a 1!              
 </code>
 </p>
 
@@ -122,7 +120,7 @@ cases... it's fantastic.
 
 In previous years, the capacity to write your own tooling like this (within the
 72 hours, of course) was often a huge advantage. This addition, thanks to the
-hard work of the organizers, made approaching really easy.
+hard work of the organizers, made approaching the problems really easy.
 
 
 
