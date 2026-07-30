@@ -233,14 +233,30 @@ inform him the list is ready.
 </code>
 </p>
 
+You start to run out of space very quickly--pipes do _not_ cross. But I was
+mostly emboldened by the fact that I could sort of think of this as a function
+call.[^reverse]
+
+[^reverse]: Basically:
+    ```lisp
+    (defun sloppy-reverse (l)
+      (if (null l)
+          nil
+          (progn (output (last l))
+                 (sloppy-reverse (butlast l)))))
+    ```
+
 <p align="center">
   <img
     src="reverse.png"
     alt="Two rooms in the debugger, with a total of four pipes between them"
-    width="75%"
+    width="442px"
   />
 </p>
 <p align="center"><em>Busy, but it works!</em></p>
+
+There was plenty of running my head into the wall following this faulty
+foundation, but for the sake of narrative I'll shunt it off to...
 
 ## Day 2
 
