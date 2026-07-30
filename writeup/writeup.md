@@ -69,7 +69,6 @@ a series of increasingly ridiculous problems in it.
 <code class="language-list">+----+         +----+
 |   @|         |    |
 |    |         |@   |
-|    |         |    |
 +----+         +----+
 Hello!           Hi! 
 </code>
@@ -94,10 +93,9 @@ they have to send numbers to each other through 'pipes', which I like to imagine
 tin-can telephones.
 
 <p align="center" style="font-size:20px;">
-<code class="language-lisp">+----+         +----+
+<code class="language-lisp">+----+        +----+
 |   @|>---v   |    |
 |    |    >-->|@   |
-|    |        |    |
 +----+        +----+
 Sending      Got it!
  a 7!               
@@ -145,7 +143,7 @@ contest's 5am start!
 
 <p align="center">
   <img
-    src="thumbs_up.png"
+    src="thumbs_up.jpeg"
     alt="Posing with a thumbs up at the start of the contest, standing in front
     of my monitors"
     width="75%"
