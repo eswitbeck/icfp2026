@@ -361,7 +361,9 @@ Trying to return to my second lesson, I decided to discard the sorting problem
 completely. After all, there are points if I can just get _some_ answer to other
 problems. What if I just wrote the dumbest thing I was sure could work?
 
-<em>Problem 5: History</em> was just a program that dumped a specific sequence of
+### Problem 5: History
+
+<em>History</em> was just a program that dumped a specific sequence of
 numbers. What's the dumbest way to write it? I'm talking worst submission that
 still passes. How about a single line that has
 every number typed out and sends them one by one? [dump.lisp](../dump.lisp)
@@ -415,7 +417,8 @@ improvement![^rewrite]
   />
 </p>
 
-With the time I had left I turned back to _Problem 2: Memory_, in which we have
+### Problem 2: Memory
+With the time I had left I turned back to _Memory_, in which we have
 to be able to persist and read back up to 100 values. There were two clear
 approaches: either store the numbers in a pipe (and worry about cycling through
 it) or have little men hold all the numbers. It wasn't too hard to imagine how to
@@ -475,8 +478,9 @@ my notebook while in a restaurant. Immersion is the best teacher!
 
 
 ## The elephant
+It's AI.
 
----
+## Final Thoughts
 
 At the time of the freeze, I was ranked 157 out of 268. Given my team was in the
 bottom 10% last year, I'm counting this as a significant improvement.
