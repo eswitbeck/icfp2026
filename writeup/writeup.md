@@ -54,23 +54,24 @@ Rose</em>, this round takes another literary source:
   />
 </p>
 <p align="center"><em>
-    Why Louisa May Alcott's more well-known book was not chosen is probably a
-    pointed question better aimed at computer science in general
+    Why Louisa May Alcott's more well-known book wasn't chosen is probably</br>
+    a pointed question better aimed at computer science in general
 </em></p>
 
 ...or rather, the little men that, as we all know, run about in our computers to
 make them work. Did I mention the contest usually comes with a sense of humor?
 
 More specifically, participants are given a new programming language of 'little
-men' (represented with `@`, NetHack-style) in 2D ASCII 'rooms' and asked to solve
+men' (represented with `@`, NetHack-style) in 2D text-art 'rooms' and asked to solve
 a series of increasingly ridiculous problems in it.
 
 <p align="center" style="font-size:20px;">
-<code class="language-list">+----+ Hello!  +----+
-|   @|_/       |    |
+<code class="language-list">+----+         +----+
+|   @|         |    |
 |    |         |@   |
-|    |    Hi!_/|    |
+|    |         |    |
 +----+         +----+
+Hello!           Hi! 
 </code>
 </p>
 
@@ -93,17 +94,18 @@ they have to send numbers to each other through 'pipes', which I like to imagine
 tin-can telephones.
 
 <p align="center" style="font-size:20px;">
-<code class="language-lisp">+----+         +----+     
-|   @|>----v   |   Got it!
-|    |\    >-->|@_/ |     
-|    | \       |    |     
-+----+ Sending +----+     
-        a 1!              
+<code class="language-lisp">+----+         +----+
+|   @|>---v   |    |
+|    |    >-->|@   |
+|    |        |    |
++----+        +----+
+Sending      Got it!
+ a 7!               
 </code>
 </p>
 
 But the best part is that the website came with a beautiful visual debugger for
-little man programs. Rooms are different colors, you can watch the little guys
+little man programs. Spaces are different colors, you can watch the little guys
 run around and click to see what they're holding, you can add your own test
 cases... it's fantastic.
 
@@ -120,17 +122,37 @@ cases... it's fantastic.
 
 In previous years, the capacity to write your own tooling like this (within the
 72 hours, of course) was often a huge advantage. This addition, thanks to the
-hard work of the organizers, made approaching the problems really easy.
+hard work of the organizers, made approaching the problems really easy. And that
+seems to be reflected in the number of scoring participants--almost double the
+prior year!
 
-
-
-With what I learned last time around, I hoped to follow a handful of new rules:
+I tried to keep a couple lessons from last year's foray in mind:
 - Don't stay up late. At all. Just work during normal hours. There will not be
   anything productive done after 11pm.
 - Move on to something new as soon as it looks like the approach is wrong. It
   feels better to get a score for the obvious solution than to think of (and not
   implement) something clever.
-- 
+- Long breaks are also good!
+
+Then there was the question of whether or not to use an LLM during the contest
+(it's freely allowed). Some teams had announced a firm stance one way or the
+other beforehand, but I made my choice at the last minute. I spend most of my
+time at work these days talking to Claude, so avoiding it completely sounded like
+a pleasant contrast. (It helps that I didn't expect to be at all competitive).
+
+And with that, I was off, comfortably starting more than 4 hours after the
+contest's 5am start!
+
+<p align="center">
+  <img
+    src="thumbs_up.png"
+    alt="Posing with a thumbs up at the start of the contest, standing in front
+    of my monitors"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
 
 ## Day 1
 
