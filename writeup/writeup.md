@@ -344,7 +344,7 @@ the first box
 in order... but now we're back to the problem of stack frames. How do I make sure
 the less thans recurse fully before the greater thans start? One thought I had
 was that, since the list will never be more than 16, you could just do it over
-and over, never returning, for 4 ($$ = log_2(16)$$) iterations, after which each
+and over, never returning, for 4 ( $$ = log_2(16)$$ ) iterations, after which each
 half MUST have fully recursed, and then pull the values out of a list that would
 look like `1 -5 1 -4 1 0 1 10`. But I'd still have to fiddle with a lot more flow
 tediousness. It started to look like this was obviously the wrong approach.
