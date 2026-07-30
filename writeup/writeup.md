@@ -170,6 +170,7 @@ the same as
 </p>
 You don't even have to write 'real' code for this
 one--you can just put it directly in the editor!
+</br>
 
 <p align="center">
   <img
@@ -260,7 +261,7 @@ bottom 10% last year, I'm counting this as a significant improvement.
 
 <p align="center">
   <img
-    src="final_standing.png"
+    src="final_standing.jpeg"
     alt="A white board, with the heading 'PROBLEMS SOLVED' and 4 markers"
     width="75%"
     		min-width="340px"
