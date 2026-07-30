@@ -94,14 +94,14 @@ they have to send numbers to each other through 'pipes', which I like to imagine
 tin-can telephones.
 
 <p align="center" style="font-size:20px;">
-```
+<code class="language-lisp">
 +----+         +----+
 |   @|>----v   |   Got it!
 |    |\    >-->|@_/ | 
 |    | \       |    |
 +----+ Sending +----+
         a 1!  
-```
+</code>
 </p>
 
 But the best part is that the website came with a beautiful visual debugger for
@@ -111,7 +111,7 @@ cases... it's fantastic.
 
 <p align="center">
   <img
-    src="9x9.jpg"
+    src="debugger.png"
     alt="The debugger, illustrating a program that draws a smiley face"
     width="75%"
     		min-width="340px"
