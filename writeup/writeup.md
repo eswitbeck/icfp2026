@@ -178,8 +178,7 @@ one--you can just put it directly in the editor!
   <img
     src="triangle_1.png"
     alt="A slightly compacted solution to the problem, displayed in the debugger"
-    width="75%"
-    style="max-width:370px;"
+    width="370px"
   />
 </p>
 <p align="center"><em>The I and O are how the little men hear about the problem</em></p>
@@ -251,8 +250,7 @@ call.[^reverse]
   <img
     src="reverse.png"
     alt="Two rooms in the debugger, with a total of four pipes between them"
-    width=75%
-    style="max-width:442px;"
+    width="442px"
   />
 </p>
 <p align="center"><em>Busy, but it works!</em></p>
