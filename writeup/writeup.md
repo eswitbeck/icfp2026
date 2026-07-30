@@ -162,8 +162,10 @@ the list of
 <p align="center">
     $$1, 1 + 2, 1 + 2 + 3,...$$
 </p>
+<p>
 If you've heard of Gauss, you've almost certainly heard of the proof that this is
 the same as
+</p>
 <p align="center">
     $$n(n + 1) / 2$$
 </p>
@@ -183,9 +185,62 @@ one--you can just put it directly in the editor!
 
 Thanks to live standings, it was possible to see that several teams were winning
 with the same score. Along with pretty much every other participant, I tried to
-work backwards from that score and figured there must be a solution in 8x8 and 13 steps. Despite my attempts, I couldn't fit it into under an 8x9 box.
+work backwards from that score and figured there must be a solution in 8x8 and 13 steps. Try as I might, I couldn't quite fit it in less than an 8x9 box.
 
 ### Problem 3: Reverse a List
+#### or: The Problem with Pipes
+
+After a nice walk outdoors (breaks!) I came up with a clunky solution to
+reversing a list of numbers. You can, of course, just look at the list over and
+over and report back the last number in it (then remove that number). It's not a
+good algorithm, but it at least should work.
+
+But there's a problem. As soon as a man picks up too many numbers, he
+starts to lose them. He just doesn't have enough hands! So if you want to get
+(say) the last number in the list, you have to put the rest somewhere. You can't
+have a man pipe back to himself, but you _can_ have a second room to block all
+the numbers in the pipe and send them back when you're ready.
+
+<p align="center" style="font-size:20px;">
+<code class="language-lisp">+----+        +----+
+|   @|>------>|    |
+|    |<------<|@   |
++----+        +----+
+Hold these     Sure!
+ for me?            
+</code>
+</p>
+
+Then there's a new problem. How do you know when you're ready? If you're sending
+the list and the second man is waiting for more, you risk moving so fast that you
+get your same list back before you're done with it. A little man race condition!
+
+This is the problem with any recursive little man strategy--you need some form of
+stack frames and memory is very scarce. I figured you could add a second pipe as
+a signal for being done with the full list; each man waits for the other to
+inform him the list is ready.
+
+<p align="center" style="font-size:20px;">
+<code class="language-lisp">+----+        +----+
+|    |>------>|    |
+| @  |<------<|@   |
++----+        +----+
+  v^           v^   
+  |^-----------<|   
+  >-------------^   
+ wait, wait...      
+ ok, ready!         
+</code>
+</p>
+
+<p align="center">
+  <img
+    src="reverse.png"
+    alt="Two rooms in the debugger, with a total of four pipes between them"
+    width="75%"
+  />
+</p>
+<p align="center"><em>Busy, but it works!</em></p>
 
 ## Day 2
 
