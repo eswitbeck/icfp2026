@@ -151,7 +151,6 @@ contest's 5am start!
 		max-width="600px"
   />
 </p>
-<p align="center"><em>They can even draw pictures!</em></p>
 
 ## Day 1
 
@@ -168,9 +167,10 @@ the same as
 <p align="center">
     $$n(n + 1) / 2$$
 </p>
+<p>
 You don't even have to write 'real' code for this
 one--you can just put it directly in the editor!
-</br>
+</p>
 
 <p align="center">
   <img
