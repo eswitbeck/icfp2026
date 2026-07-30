@@ -401,18 +401,17 @@ improvement![^rewrite]
 
 [^rewrite]: It turns out I completely forgot that rewriting is a thing, and that
 
-    $$n(n + 1) / 2 = (n^2 + n) / 2$$
+    `n(n + 1) / 2 = (n^2 + n) / 2`
 
-    You never need the 1 in the first place and can just apply `*` `+`. \*sigh\*
+    You never need the 1 in the first place and can just apply `*` `+`.
+    \*sigh\*
 
 <p align="center">
   <img
     src="triangle_2.png"
     alt="A slightly more compacted version of the first triangle solution in the
     debugger"
-    width="75%"
-    		min-width="340px"
-		max-width="600px"
+    width="346px"
   />
 </p>
 
@@ -426,9 +425,7 @@ have a man whose only job was to remember:
   <img
     src="cell.png"
     alt="A tiny room with two paths for reading and writing"
-    width="75%"
-    		min-width="340px"
-		max-width="600px"
+    width="395px"
   />
 </p>
 <p align="center"><em>My little monk</em></p>
@@ -458,29 +455,23 @@ fluency with the little man language. At one point I was scribbling out
 unintelligible code in
 my notebook while in a restaurant. Immersion is the best teacher!
 
-<div class="flex" style="align-items:center;">
+<p align="center">
   <img
     src="notes-1.jpeg"
-    alt="That same room, tiled over and over"
-    width="75%"
-    		min-width="340px"
-		max-width="600px"
+    alt="Scribbled notes, some in the little man language"
+    width="25%"
   />
   <img
     src="notes-2.jpeg"
-    alt="That same room, tiled over and over"
-    width="75%"
-    		min-width="340px"
-		max-width="600px"
+    alt="Scribbled notes, some in the little man language"
+    width="25%"
   />
   <img
     src="notes-3.jpeg"
-    alt="That same room, tiled over and over"
-    width="75%"
-    		min-width="340px"
-		max-width="600px"
+    alt="Scribbled notes, some in the little man language"
+    width="25%"
   />
-</div>
+</p>
 
 
 ## The elephant
