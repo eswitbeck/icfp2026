@@ -160,16 +160,14 @@ contest's 5am start!
 If the debugger made approaching the problems easy, it made writing this one
 effortless. The problem is, given a number $$n$$, return the $$n$$ th number in
 the list of
-<br/><p align="center">
+<p align="center">
     $$1, 1 + 2, 1 + 2 + 3,...$$
-</span>
-</br>
+</p>
 If you've heard of Gauss, you've almost certainly heard of the proof that this is
 the same as
-</br><p align="center">
+<p align="center">
     $$n(n + 1) / 2$$
-</span>
-</br>
+</p>
 You don't even have to write 'real' code for this
 one--you can just put it directly in the editor!
 
