@@ -151,19 +151,39 @@ contest's 5am start!
 		max-width="600px"
   />
 </p>
+<p align="center"><em>They can even draw pictures!</em></p>
 
 ## Day 1
 
-### Triangle
+### Problem 1: Triangle
 
-Thanks to live standings, it was possible to see that at least a dozen of the top
-teams had converged on a solution with a score of 832, which was presumably the
-optimal layout. 
+If the debugger made approaching the problems easy, it made writing this one
+effortless. The problem is, given a number $$n$$, return the $$n$$th number in
+the list of $$1, 1 + 2, 1 + 2 + 3,...$$. If you've heard of Gauss, you've
+almost certainly heard of the proof that this is the same as $$n(n + 1) / 2$$.
+You don't even have to write 'real' code for this one--you can just put it
+directly in the editor!
 
-Along with pretty much every other participant, I tried to work backwards from my
-solution and figured there was a solution in 8x8 and 13 ticks
+<p align="center">
+  <img
+    src="triangle_1.png"
+    alt="A slightly compacted solution to the problem, displayed in the debugger"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
+<p align="center"><em>The I and O are how the little men hear about the problem</em></p>
 
-### Reverse a List
+Thanks to live standings, it was possible to see that several teams were winning
+with the same score. Along with pretty much every other participant, I tried to
+work backwards from that score and figured there must be a solution in 8x8 and 13 steps. Despite my attempts, I couldn't fit it into under an 8x9 box.
+
+### Problem 3: Reverse a List
+
+## Day 2
+
+### Problem 4: Sort
 
 portion of a (suboptimal, and more embarrassingly, broken) sort algorithm
 apparently called
@@ -185,10 +205,6 @@ apparently called
 [^author]: Speaking of <em>Little Women</em>, the (real) algorithm was apparently
     designed by Dalia Motzkin, so that's neat!
 
-## Day 2
-
-### Sort
-
 ## Day 3
 
 ### Please, something
@@ -208,11 +224,18 @@ apparently called
     </a>
 </em></p>
 
-## The elephant
-
-[M]
+[^history]
 But that's not what we're here for!
 We're doing stupid simple things. On to the next.
+
+[^history]: The first improvements that look obvious are just taking the square of the
+    length, adding a few rows experimentally for redirection, and compressing with
+    boustrophedon. Compressing with a different base number would probably help, as
+    might something like Huffman encoding[^huffman]. Maybe there's even something clever
+    that lets you reuse individual digits?
+
+[^huffman]: Although apparently other teams considered the encoding and the space cost of
+    the codec was too much.
 
 As a bonus, I realized I could trim an instruction from _Triangle_ and finally
 condense my shape into 8x8. Not the perfect solution yet, but still points!
@@ -225,15 +248,17 @@ You never need the 1 in the first place and can just apply `*` `+`. \*sigh\*
 
 For _Memory_, the task was to 
 
+## The elephant
+
 At the time of the freeze, I was ranked 157 out of 268. Given my team was in the
 bottom 10% last year, I'm counting this as a significant improvement.
 
-
-[M] The first improvements that look obvious are just taking the square of the
-length, adding a few rows experimentally for redirection, and compressing with
-boustrophedon. Compressing with a different base number would probably help, as
-might something like Huffman encoding[N]. Maybe there's even something clever
-that lets you reuse individual digits?
-
-[N] Although apparently other teams considered the encoding and the space cost of
-the codec was too much.
+<p align="center">
+  <img
+    src="final_standing.png"
+    alt="A white board, with the heading 'PROBLEMS SOLVED' and 4 markers"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
