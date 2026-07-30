@@ -349,7 +349,7 @@ half MUST have fully recursed, and then pull the values out of a list that would
 look like `1 -5 1 -4 1 0 1 10`. But I'd still have to fiddle with a lot more flow
 tediousness. It started to look like this was obviously the wrong approach.
 
-[^log]: $$ = log_2(16)$$. This is also wrong in the worst case, anyway
+[^log]: Log base 2 of 16. This is also wrong in the worst case, anyway
 
 Discouraged, I lost a lot of my pace.
 
