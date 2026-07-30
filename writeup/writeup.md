@@ -53,6 +53,10 @@ Rose</em>, this round takes another literary source:
     height="900px"
   />
 </p>
+<p align="center"><em>
+    Why Louisa May Alcott's more well-known book was not chosen is probably a
+    pointed question better aimed at computer science in general
+</em></p>
 
 ...or rather, the little men that, as we all know, run about in our computers to
 make them work. Did I mention the contest usually comes with a sense of humor?
@@ -61,12 +65,64 @@ More specifically, participants are given a new programming language of 'little
 men' (represented with `@`, NetHack-style) in 2D ASCII 'rooms' and asked to solve
 a series of increasingly ridiculous problems in it.
 
+<p align="center" style="font-size:20px;">
 ```
-+----+ Hello! +----+
-|   @|_/      |@   |
-|    |   Hi!_/|    |
-+----+        +----+
++----+ Hello!  +----+
+|   @|_/       |    |
+|    |         |@   |
+|    |    Hi!_/|    |
++----+         +----+
 ```
+</p>
+
+There are 12 problems to start, with 4 to be added after the 'Lightning Round' of
+the first 24 hours. You get 1 point if your boxes and men solve the problem
+correctly and up to 1 more point depending on how close to the best solution
+yours is (it's also possible to see how well other teams have done on each
+problem and where you rank). Scoring rewards small and fast (but especially
+small) solutions. The nice thing about this is that you're incentivized to solve
+more problems poorly over perfecting solutions.
+
+Men walk about one space at a time, changing direction when they walk over arrows
+(`<`, `>`, `^`, `v`), holding numbers in their two hands, and performing
+operations on those numbers when they walk over a handful of symbols. Some
+symbols, as you might expect, allow them to make choices based on the numbers
+they're holding.
+
+Since they're (in the early round, at least) constrained to one man per room,
+they have to send numbers to each other through 'pipes', which I like to imagine as
+tin-can telephones.
+
+<p align="center" style="font-size:20px;">
+```
++----+         +----+
+|   @|>----v   |   Got it!
+|    |\    >-->|@_/ | 
+|    | \       |    |
++----+ Sending +----+
+        a 1!  
+```
+</p>
+
+But the best part is that the website came with a beautiful visual debugger for
+little man programs. Rooms are different colors, you can watch the little guys
+run around and click to see what they're holding, you can add your own test
+cases... it's fantastic.
+
+<p align="center">
+  <img
+    src="9x9.jpg"
+    alt="The debugger, illustrating a program that draws a smiley face"
+    width="75%"
+    		min-width="340px"
+		max-width="600px"
+  />
+</p>
+<p align="center"><em>They can even draw pictures!</em></p>
+
+In previous years, the capacity to write your own tooling like this (within the
+72 hours, of course) was often a huge advantage. This addition, thanks to the
+hard work of the organizers, made approaching really easy.
 
 
 
@@ -77,10 +133,6 @@ With what I learned last time around, I hoped to follow a handful of new rules:
   feels better to get a score for the obvious solution than to think of (and not
   implement) something clever.
 - 
-
-
-
-## [prompt]
 
 ## Day 1
 
@@ -110,6 +162,10 @@ apparently called
             (append (half-sort (length less-than) less-than)
                     (half-sort (length greater-than) greater-than)))))
     ```
+    [^author]
+
+[^author]: Speaking of <em>Little Women</em>, the (real) algorithm was apparently
+    designed by Dalia Motzkin, so that's neat!
 
 ## Day 2
 
@@ -133,6 +189,8 @@ apparently called
         awww yiss
     </a>
 </em></p>
+
+## The elephant
 
 [M]
 But that's not what we're here for!
