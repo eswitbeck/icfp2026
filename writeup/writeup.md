@@ -184,11 +184,12 @@ one--you can just put it directly in the editor!
 <p align="center"><em>The I and O are how the little men hear about the problem</em></p>
 
 Thanks to live standings, it was possible to see that several teams were winning
-with the same score. Along with pretty much every other participant, I tried to
-work backwards from that score and figured there must be a solution in 8x8 and 13 steps. Try as I might, I couldn't quite fit it in less than an 8x9 box.
+with the same lower score. Along with pretty much every other participant, I
+tried to work backwards from that score and figured there must be a solution in
+8x8 and 13 steps. Try as I might, I couldn't quite fit it in less than an 8x9
+box.
 
-### Problem 3: Reverse a List
-#### or: The Problem with Pipes
+### Problem 3: Reverse a List (or: The Problem with Pipes)
 
 After a nice walk outdoors (breaks!) I came up with a clunky solution to
 reversing a list of numbers. You can, of course, just look at the list over and
@@ -196,8 +197,8 @@ over and report back the last number in it (then remove that number). It's not a
 good algorithm, but it at least should work.
 
 But there's a problem. As soon as a man picks up too many numbers, he
-starts to lose them. He just doesn't have enough hands! So if you want to get
-(say) the last number in the list, you have to put the rest somewhere. You can't
+starts to lose them. He just doesn't have enough hands! So if you want to get the
+last number in the list, you have to put the rest somewhere. You can't
 have a man pipe back to himself, but you _can_ have a second room to block all
 the numbers in the pipe and send them back when you're ready.
 
@@ -217,7 +218,7 @@ get your same list back before you're done with it. A little man race condition!
 
 This is the problem with any recursive little man strategy--you need some form of
 stack frames and memory is very scarce. I figured you could add a second pipe as
-a signal for being done with the full list; each man waits for the other to
+a channel for announcing finishing with the full list; each man waits for the other to
 inform him the list is ready.
 
 <p align="center" style="font-size:20px;">
@@ -262,11 +263,44 @@ foundation, but for the sake of narrative I'll shunt it off to...
 
 ### Problem 4: Sort
 
+Foolishly thinking that recursive function calls could build into more
+complicated solutions, I started thinking about how the hardest questions could
+be addressed. It would probably be extremely difficult to do them by hand, but
+if you could think about little man rooms as code, it might not be too hard to
+write a transpiler for a simple Domain Specific Language. I reasoned
+there were two main ways of doing this:
+either you design a language that lets you micromanage rooms without thinking
+about layout, or you 'prefab' a bunch of small rooms and assemble them later. At
+this point, I figured top teams would probably do the latter.
+
+There are some disincentives to the first approach, too. I'd have to figure out
+how to map control flow to a 2D layout with weird intersection rules[^graph].
+Plus, if the pipes are too far away, little men can send numbers to the wrong
+one! So it's not possible to think only in terms of isolated rooms and figure out
+connections later.
+
+[^graph]: Maybe as a directed graph with labeled GOTO blocks as nodes? With
+    simple 'add one more column and row' fixes every time you need to add a new
+    independent path?
+
+I figured if I were unusually motivated, maybe I could put something together.
+Besides, lisp macros mean you can skip lexing and parsing altogether and jump
+into the hard part if you design your DSL correctly.
+I sketched out the beginnings of what could be a syntax based on what I had done
+so far in [sort.pseudo](../sort.pseudo). I didn't want to start with that, but if
+nothing else it might help me organize my thoughts while I attempted a sorting
+problem by hand.
+
+Reader, I did not write a transpiler.
+
+Instead, I learned that my approach was very misguided.
+
+
 portion of a (suboptimal, and more embarrassingly, broken) sort algorithm
 apparently called
 [meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
 
-[^lisp]:
+[^lisp]: This sloppy mess:
     ```lisp
     (defun half-sort (len l)
       (if (= 1 len)
