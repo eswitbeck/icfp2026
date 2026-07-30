@@ -158,11 +158,20 @@ contest's 5am start!
 ### Problem 1: Triangle
 
 If the debugger made approaching the problems easy, it made writing this one
-effortless. The problem is, given a number $$n$$, return the $$n$$th number in
-the list of $$1, 1 + 2, 1 + 2 + 3,...$$. If you've heard of Gauss, you've
-almost certainly heard of the proof that this is the same as $$n(n + 1) / 2$$.
-You don't even have to write 'real' code for this one--you can just put it
-directly in the editor!
+effortless. The problem is, given a number $$n$$, return the $$n$$ th number in
+the list of
+<br/><span align="center">
+    $$1, 1 + 2, 1 + 2 + 3,...$$
+</span>
+</br>
+If you've heard of Gauss, you've almost certainly heard of the proof that this is
+the same as
+</br><span align="center">
+    $$n(n + 1) / 2$$
+</span>
+</br>
+You don't even have to write 'real' code for this
+one--you can just put it directly in the editor!
 
 <p align="center">
   <img
@@ -170,7 +179,7 @@ directly in the editor!
     alt="A slightly compacted solution to the problem, displayed in the debugger"
     width="75%"
     		min-width="340px"
-		max-width="600px"
+		max-width="400px"
   />
 </p>
 <p align="center"><em>The I and O are how the little men hear about the problem</em></p>
