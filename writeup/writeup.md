@@ -106,7 +106,7 @@ cases... it's fantastic.
 <p align="center">
   <img
     src="simple-littleman.gif"
-    alt="The debugger, illustrating a program that draws a smiley face"
+    alt="The debugger, illustrating a program that draws a few simple colors"
     width="613px"
     		min-width="340px"
 		max-width="600px"
