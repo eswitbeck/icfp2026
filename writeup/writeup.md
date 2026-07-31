@@ -83,7 +83,7 @@ small and fast (but especially small) solutions.
 
 Men walk about one space at a time, changing direction when they walk over arrows
 (`<`, `>`, `^`, `v`), 'holding' numbers, and performing
-operations on those numbers (or changing direction) depending on the characters they step on. Since they're[^count] constrained to one man per room, they have to send numbers
+operations on those numbers (or changing direction) depending on the characters they step on. Since they're constrained to one man per room[^count], they have to send numbers
 to each other through 'pipes', which I like to imagine as tin-can telephones.
 
 [^count]: In the early round, at least.
@@ -313,7 +313,8 @@ less than the average (both prefixed with their own lengths).
 
 For this to work, I just need to recurse by feeding the two lists back into the
 first box in order... but now we're back to the problem of stack frames.  How do
-I make sure the less thans fully recurse before the greater thans
+I make sure the <em>less-thans</em> fully recurse before the
+<em>greater-thans</em>
 start?[^optimize]
 
 [^optimize]: One thought I had was that, since the list will never be more than
@@ -419,10 +420,10 @@ relevant? I could.
 As soon as the memory was working (debugged in the final hours of the contest) it
 started to seem pretty obvious that it could be paired with machine instructions
 and a virtual CPU instead of worrying about room layouts. Honestly, I'm not sure
-how well I could have pulled it off, but I did regret waiting on `Memory`.
+how well I could have pulled it off, but I did regret waiting on this problem.
 
 I was surprised to find that I had already gained some fluency with the little
-man language. At one point I was scribbling out unintelligible code in my
+man language. At one point I was scribbling out pidgin code in my
 notebook while in a restaurant. Immersion is the best teacher!
 
 <p align="center">
@@ -457,8 +458,7 @@ improvement in the future, what will this sort of contest mean? Do you pivot to
 'who uses LLMs best'? Or, 'who codes the best, you know, that thing we used to
 do?' Assuming we haven't found ourselves in [much, much worse
 territory](https://huggingface.co/blog/agent-intrusion-technical-timeline) by
-then. [Centaurs](https://en.wikipedia.org/wiki/Advanced_chess) might be best today. I
-don't see a reason to expect that to continue.
+then.
 
 I'd say I wish I had an answer, but I fear I wouldn't like it.
 
