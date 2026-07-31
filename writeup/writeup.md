@@ -330,9 +330,9 @@ obviously the wrong approach. Discouraged, I lost a lot of my pace.
 
 ### Please, something
 
-Remembering lesson 2, I discarded the sorting problem completely.
-After all, getting _an_ answer to other problems was still worth points. What if
-I just wrote the dumbest thing I was sure could work?
+Remembering lesson 2 (move on when you're stuck), I discarded the sorting problem
+completely. After all, getting _an_ answer to other problems was still worth
+points. What if I just wrote the dumbest thing I was sure could work?
 
 ### Problem 5: History
 
