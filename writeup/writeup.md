@@ -323,7 +323,7 @@ start?[^optimize]
     0 1 10`. But that was also wrong in the worst case anyway.
 
 No matter what I'd still have to fiddle with a lot more flow tediousness after
-having already spent a whole day on it. It started to look like this was
+having already spent most of a day on it. It started to look like this was
 obviously the wrong approach. Discouraged, I lost a lot of my pace.
 
 ## Day 3
