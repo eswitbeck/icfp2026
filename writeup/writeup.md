@@ -5,7 +5,7 @@ _July 30, 2026_
 
 <p align="center">
 <em>
-In the era of contests, of AI, and of slop tired and sorry,
+In the era of contests, AI, and of slop tired and sorry,
 </br>
 of heroes, and villains, and ideals old and starry,
 </br>
@@ -71,7 +71,7 @@ a series of increasingly ridiculous problems in it.
 |   @|         |    |
 |    |         |@   |
 +----+         +----+
-Hello!           Hi! 
+hello!           hi! 
 </code>
 </p>
 
@@ -93,7 +93,7 @@ to each other through 'pipes', which I like to imagine as tin-can telephones.
 |   @|>---v   |    |
 |    |    >-->|@   |
 +----+        +----+
-Sending      Got it!
+sending      got it!
  a 7!               
 </code>
 </p>
@@ -105,9 +105,9 @@ cases... it's fantastic.
 
 <p align="center">
   <img
-    src="debugger.png"
+    src="simple-littleman.gif"
     alt="The debugger, illustrating a program that draws a smiley face"
-    width="75%"
+    width="613px"
     		min-width="340px"
 		max-width="600px"
   />
@@ -188,14 +188,14 @@ the numbers in the pipe and send them back when you're ready.
 |   @|>------>|    |
 |    |<------<|@   |
 +----+        +----+
-Hold these     Sure!
+hold these     sure!
  for me?            
 </code>
 </p>
 
 Then there's a new problem. How do you know when you're ready? You risk moving so
 fast that you get your same list back before you're done with it. A little man
-race condition! Any recursive little man strategy has this problem--you need
+race condition! Any 'recursive' little man strategy has this problem--you need
 stack frames and memory is very scarce. I figured you could add a second pipe as
 a channel for announcing completion with the full list.
 
@@ -213,9 +213,8 @@ a channel for announcing completion with the full list.
 </p>
 
 You start to run out of space very quickly--pipes do _not_ cross. But I made the
-mistake of being excited that I could think of boxes as functions and started to
-plan off of it.
-[^reverse]
+mistake of being excited that I could think of boxes as functions[^reverse] and
+started to make my plans off that assumption.
 
 [^reverse]: Basically:
     ```lisp
@@ -233,7 +232,7 @@ plan off of it.
     width="442px"
   />
 </p>
-<p align="center"><em>Busy, but it works!</em></p>
+<p align="center"><em>Busy and oversized, but it works!</em></p>
 
 ## Day 2
 
