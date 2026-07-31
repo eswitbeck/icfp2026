@@ -292,7 +292,7 @@ to signal completion immediately ran into collisions:
     src="sort-failure.png"
     alt="Several rooms, terminating in pipes that will be forced to intersect if
     they continue"
-    width="75%"
+    width="525px"
   />
 </p>
 <p align="center"><em>Oh, that magic feeling, nowhere to go!</em></p>
