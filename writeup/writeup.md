@@ -289,7 +289,7 @@ to signal completion immediately ran into collisions:
 
 <p align="center">
   <img
-    src="sort-failure.gif"
+    src="sort-failure.png"
     alt="Several rooms, terminating in pipes that will be forced to intersect if
     they continue"
     width="75%"
@@ -304,7 +304,7 @@ less than the average (both prefixed with their own lengths).
 
 <p align="center">
   <img
-    src="filter-complete.png"
+    src="sort-failure.gif"
     alt="A slightly more coherent but more complicated layout that ends in two
     unused rooms"
     width="75%"
