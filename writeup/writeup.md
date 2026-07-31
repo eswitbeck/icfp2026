@@ -98,10 +98,10 @@ sending      got it!
 </code>
 </p>
 
-But the best part is that the website came with a beautiful visual debugger for
-little man programs. Spaces are different colors, you can watch the little guys
-run around and click to see what they're holding, you can add your own test
-cases... it's fantastic.
+But the best part is that the contest website came with a beautiful visual
+debugger for little man programs. Spaces are different colors, you can watch the
+little guys run around and click to see what they're holding, you can add your
+own test cases... it's fantastic.
 
 <p align="center">
   <img
@@ -115,12 +115,13 @@ cases... it's fantastic.
 <p align="center"><em>They can even draw pictures!</em></p>
 
 I tried to keep a couple lessons from last year's foray in mind:
-- Don't stay up late. At all. Just work during normal hours. There will not be
+1. Don't stay up late. At all. Just work during normal hours. There will not be
   anything productive done after 11pm.
-- Move on to something new as soon as it looks like the approach is wrong. It
+2. Move on to something new as soon as it looks like the approach is wrong. It
   feels better to get a score for the obvious solution than to think of (and not
   implement) something clever.
-- Long breaks are also good!
+3. Build and discard little tools quickly.
+4. Long breaks are also good!
 
 Then there was the question of whether or not to use an LLM during the contest
 (it's freely allowed). Some teams had announced the expected all-in or all-out
@@ -172,7 +173,7 @@ box.
 
 ### Problem 3: Reverse a List (or: The Problem with Pipes)
 
-After a nice walk outdoors (breaks!) I came up with a clunky solution to
+After a nice walk outdoors (lesson 4: long breaks!) I came up with a clunky solution to
 reversing a list of numbers. You can just look at the list over and
 over and send out the last number in it (then remove that number). It's not a
 good algorithm, but it at least should work.
@@ -238,7 +239,7 @@ started to make my plans off that assumption.
 
 I began thinking about how the hardest questions (like drawing the results of a
 pathfinding algorithm) could be addressed. It would be extremely difficult to do
-them by hand, but it might not be too hard to write a transpiler for a simple
+them by hand, but it might not be _too_ hard to write a transpiler for a simple
 Domain Specific Language[^macro]. I thought there were two main ways of doing
 this: either you design a language that ignores room layout and handle that with
 the transpiler[^transpile], or you 'prefab' a bunch of small rooms and assemble
@@ -280,7 +281,7 @@ more embarrassingly, incorrect) rendition of a sort algorithm apparently called
     ```
     [^author]
 
-[^author]: Speaking of <em>Little Women</em>, the (real) algorithm was apparently
+[^author]: Speaking of <em>Little Women</em>, the (not broken) algorithm was
     designed by Dalia Motzkin, so that's neat!
 
 My approach turned out to be misguided in several ways. First, using bonus pipes
@@ -311,26 +312,25 @@ less than the average (both prefixed with their own lengths).
 </p>
 
 For this to work, I just need to recurse by feeding the two lists back into the
-first box in order... but now we're back to the problem of stack frames.  How do
+first box in order... but now we're back to the problem of stack frames. How do
 I make sure the <em>less-thans</em> fully recurse before the
 <em>greater-thans</em>
 start?[^optimize]
 
-[^optimize]: One thought I had was that, since the list will never be more than
-    16 items, you could just do it over and over for log base 2 of n iterations, after
-    which each half MUST have fully recursed, and then pull the values out of a
-    list like `1 -5 1 -4 1 0 1 10`. But that was also wrong in the worst case
-    anyway.
+[^optimize]: Since the list will never be more than 16 items, I thought I could
+    just loop it for 4 (log base 2 of 16) iterations, after which each half MUST
+    have fully recursed, and then pull the values out of a list like `1 -5 1 -4 1
+    0 1 10`. But that was also wrong in the worst case anyway.
 
-No matter what I'd still have to fiddle with a lot more flow tediousness. It
-started to look like this was obviously the wrong approach. Discouraged, I lost
-a lot of my pace.
+No matter what I'd still have to fiddle with a lot more flow tediousness after
+having already spent a whole day on it. It started to look like this was
+obviously the wrong approach. Discouraged, I lost a lot of my pace.
 
 ## Day 3
 
 ### Please, something
 
-Trying to return to my second lesson, I discarded the sorting problem completely.
+Remembering lesson 2, I discarded the sorting problem completely.
 After all, getting _an_ answer to other problems was still worth points. What if
 I just wrote the dumbest thing I was sure could work?
 
@@ -374,7 +374,8 @@ but still an improvement![^rewrite]
     `n(n + 1) / 2 = (n^2 + n) / 2`
 
     You never need the 1 in the first place and can just apply `*` `+`.
-    \*sigh\*
+    </br>
+    <bold>\*sigh\*</bold>
 
 <p align="center">
   <img
@@ -414,15 +415,16 @@ relevant? I could.
 		max-width="600px"
   />
 </p>
-<p align="center"><em>My little abbey</em></p>
+<p align="center"><em>My little abbey. No newfangled multiplexers here!</em></p>
 
 As soon as the memory was working (debugged in the final hours of the contest) it
 started to seem pretty obvious that it could be paired with machine instructions
-and a virtual CPU instead of worrying about room layouts. Honestly, I'm not sure
-how well I could have pulled it off, but I did regret waiting on this problem.
+and a virtual CPU instead of worrying about room layouts. Sure enough, lots of
+teams did this. Honestly, I'm not sure how well I could have pulled it off, but I
+did regret waiting on this problem.
 
 I was surprised to find that I had already gained some fluency with the little
-man language. At one point I was scribbling out pidgin code in my
+man language by the end. At one point I was scribbling out pidgin code in my
 notebook while in a restaurant. Immersion is the best teacher!
 
 <p align="center">
@@ -445,11 +447,10 @@ notebook while in a restaurant. Immersion is the best teacher!
 
 ## The elephant
 
-Yeah, it's AI. Every contestant was thinking about it. Several teams employed it
-significantly for the first time this year. The organizers explicitly
-designed the problem to be difficult to simply churn on a model, but teams with
-limited or even minimal interaction vibed into positions competitive with top
-players.
+Yeah, it's the AI. Every contestant was thinking about it. Several teams employed
+it significantly for the first time this year. The organizers explicitly designed
+the problem to be difficult to simply churn on a model, but teams with limited or
+even minimal supervision vibed into positions competitive with top players.
 
 It's strange--this year's contest produced such tremendous joy, yet there seems
 (to me) to be a somber air in the aftermath. If we see the same pace of
@@ -473,9 +474,18 @@ choice but to call this a huge success.
 
 Ironically, I wonder if I overcorrected towards taking things easy. I probably
 could have fought through at least a couple more problems or even taken a more
-ambitious tack towards the hard parts. Either way, I once again had a great time
-participating and I'm massively thankful to the organizers for their effort. I'll
-have to figure out the right balance in 2027!
+ambitious tack towards the hard parts. Would I have been happier with more
+problems solved and more sleep deprivation? That will have to be a question for
+2027.
+
+I did notice I completely neglected lesson 3. Having such nice website tooling
+made it a little moot, but probably also lulled me into the sense that I didn't
+need more: I barely typed any code! Something else for me to fix, perhaps.
+
+On the whole, I am massively thankful to the organizers for their effort. I now
+look forward to these for the whole year, and it's thanks to huge investment in
+advance that they work as well as this one did. The ICFPPC really feels like a
+little spot of pure, unalloyed goodness in the universe. I'm grateful for it.
 
 <p align="center">
   <img
