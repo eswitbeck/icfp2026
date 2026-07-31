@@ -1,5 +1,5 @@
 # Esther vs The Machine at ICFPPC 2026
-_July 28, 2026_
+_July 30, 2026_
 
 ---
 
@@ -42,9 +42,10 @@ prelude refresher, this is a 72-hour annual programming contest. The premise is:
 usually a very hard problem (or a series of problems that ends in something very
 hard), with an open choice of programming language, and a prize of... well,
 winning. There are plenty of solo groups, but teams of any size are allowed so
-competition is steep.
+competition is steep. As for me, my goal is just to improve my bottom-of-the-list
+ranking from last year.
 
-Whereas last year took its thematic inspiration from <em>The Name of the
+Whereas the previous competition took its inspiration from <em>The Name of the
 Rose</em>, this round takes another literary source:
 <p align="center">
   <img
@@ -77,20 +78,17 @@ Hello!           Hi!
 There are 12 problems to start, with 4 to be added after the 'Lightning Round' of
 the first 24 hours. You get 1 point if your boxes and men solve the problem
 correctly and up to 1 more point depending on how close to the best solution
-yours is (it's also possible to see how well other teams have done on each
-problem and where you rank). Scoring rewards small and fast (but especially
-small) solutions. The nice thing about this is that you're incentivized to solve
-more problems poorly over perfecting solutions.
+yours is (it's also possible to see team ranking by problem). Scoring rewards
+small and fast (but especially small) solutions.
 
 Men walk about one space at a time, changing direction when they walk over arrows
 (`<`, `>`, `^`, `v`), holding numbers in their two hands, and performing
-operations on those numbers when they walk over a handful of symbols. Some
-symbols, as you might expect, allow them to make choices based on the numbers
-they're holding.
+operations on those numbers (or changing direction) depending on the characters they step on.
 
-Since they're (in the early round, at least) constrained to one man per room,
-they have to send numbers to each other through 'pipes', which I like to imagine as
-tin-can telephones.
+Since they're[^count] constrained to one man per room, they have to send numbers
+to each other through 'pipes', which I like to imagine as tin-can telephones.
+
+[^count]: In the early round, at least.
 
 <p align="center" style="font-size:20px;">
 <code class="language-lisp">+----+        +----+
@@ -118,12 +116,6 @@ cases... it's fantastic.
 </p>
 <p align="center"><em>They can even draw pictures!</em></p>
 
-In previous years, the capacity to write your own tooling like this (within the
-72 hours, of course) was often a huge advantage. This addition, thanks to the
-hard work of the organizers, made approaching the problems really easy. And that
-seems to be reflected in the number of scoring participants--almost double the
-prior year!
-
 I tried to keep a couple lessons from last year's foray in mind:
 - Don't stay up late. At all. Just work during normal hours. There will not be
   anything productive done after 11pm.
@@ -133,10 +125,10 @@ I tried to keep a couple lessons from last year's foray in mind:
 - Long breaks are also good!
 
 Then there was the question of whether or not to use an LLM during the contest
-(it's freely allowed). Some teams had announced a firm stance one way or the
-other beforehand, but I made my choice at the last minute. I spend most of my
+(it's freely allowed). Some teams had announced the expected all-in or all-out
+stances beforehand, but I made my choice at the last minute. I spend most of my
 time at work these days talking to Claude, so avoiding it completely sounded like
-a pleasant contrast. (It helps that I didn't expect to be at all competitive).
+a pleasant contrast.
 
 And with that, I was off, comfortably starting more than 4 hours after the
 contest's 5am start!
@@ -157,22 +149,10 @@ contest's 5am start!
 ### Problem 1: Triangle
 
 If the debugger made approaching the problems easy, it made writing this one
-effortless. The problem is, given a number $$n$$, return the $$n$$ th number in
-the list of
-<p align="center">
-    $$1, 1 + 2, 1 + 2 + 3,...$$
-</p>
-<p>
-If you've heard of Gauss, you've almost certainly heard of the proof that this is
-the same as
-</p>
-<p align="center">
-    $$n(n + 1) / 2$$
-</p>
-<p>
-You don't even have to write 'real' code for this
+effortless. The problem is to generate the `n`th [triangular
+number](https://en.wikipedia.org/wiki/Triangular_number). If you know the trick
+to calculating these, it's a very simple formula. You don't even have to write 'real' code for this
 one--you can just put it directly in the editor!
-</p>
 
 <p align="center">
   <img
@@ -192,8 +172,8 @@ box.
 ### Problem 3: Reverse a List (or: The Problem with Pipes)
 
 After a nice walk outdoors (breaks!) I came up with a clunky solution to
-reversing a list of numbers. You can, of course, just look at the list over and
-over and report back the last number in it (then remove that number). It's not a
+reversing a list of numbers. You can just look at the list over and
+over and send out the last number in it (then remove that number). It's not a
 good algorithm, but it at least should work.
 
 But there's a problem. As soon as a man picks up too many numbers, he
@@ -212,14 +192,11 @@ Hold these     Sure!
 </code>
 </p>
 
-Then there's a new problem. How do you know when you're ready? If you're sending
-the list and the second man is waiting for more, you risk moving so fast that you
-get your same list back before you're done with it. A little man race condition!
-
-This is the problem with any recursive little man strategy--you need some form of
+Then there's a new problem. How do you know when you're ready? You risk moving so
+fast that you get your same list back before you're done with it. A little man
+race condition! Any recursive little man strategy has this problem--you need
 stack frames and memory is very scarce. I figured you could add a second pipe as
-a channel for announcing finishing with the full list; each man waits for the other to
-inform him the list is ready.
+a channel for announcing completion with the full list.
 
 <p align="center" style="font-size:20px;">
 <code class="language-lisp">+----+        +----+
@@ -234,9 +211,10 @@ inform him the list is ready.
 </code>
 </p>
 
-You start to run out of space very quickly--pipes do _not_ cross. But I was
-mostly emboldened by the fact that I could sort of think of this as a function
-call.[^reverse]
+You start to run out of space very quickly--pipes do _not_ cross. But I made the
+mistake of being excited that I could think of boxes as functions and started to
+plan off of it.
+[^reverse]
 
 [^reverse]: Basically:
     ```lisp
@@ -256,44 +234,40 @@ call.[^reverse]
 </p>
 <p align="center"><em>Busy, but it works!</em></p>
 
-There was plenty of running my head into the wall following this faulty
-foundation, but for the sake of narrative I'll shunt it off to...
-
 ## Day 2
 
-### Problem 4: Sort
+I began thinking about how the hardest questions (like drawing the results of a
+pathfinding algorithm) could be addressed. It would be extremely difficult to do
+them by hand, but it might not be too hard to write a transpiler for a simple
+Domain Specific Language[^macro]. I thought there were two main ways of doing
+this: either you design a language that ignores room layout and handle that with
+the transpiler[^transpile], or you 'prefab' a bunch of small rooms and assemble
+them later. I was assuming top teams would probably do the latter.
 
-Foolishly thinking that recursive function calls could build into more
-complicated solutions, I started thinking about how the hardest questions could
-be addressed. It would probably be extremely difficult to do them by hand, but
-if you could think about little man rooms as code, it might not be too hard to
-write a transpiler for a simple Domain Specific Language. I reasoned
-there were two main ways of doing this:
-either you design a language that lets you micromanage rooms without thinking
-about layout, or you 'prefab' a bunch of small rooms and assemble them later. At
-this point, I figured top teams would probably do the latter.
+[^macro]: Not to sound like too much of a stereotype, but I'm pretty sure lisp
+    macros would make the whole parsing bit of this a lot easier!
 
-There are some disincentives to the first approach, too. I'd have to figure out
-how to map control flow to a 2D layout with weird intersection rules[^graph].
-Plus, if the pipes are too far away, little men can send numbers to the wrong
-one! So it's not possible to think only in terms of isolated rooms and figure out
-connections later.
+[^transpile]: There are a lot of disincentives, though. How do you map program
+    control flow to 2D? A directed graph? And then how do path intersections
+    work? Plus, if the pipes are too far away, little men can send numbers to the
+    wrong one! So it's not possible to think only in terms of isolated rooms and
+    figure out connections later.
 
-[^graph]: Maybe as a directed graph with labeled GOTO blocks as nodes? With
-    simple 'add one more column and row' fixes every time you need to add a new
-    independent path?
-
-I figured if I were unusually motivated, maybe I could put something together.
-Besides, lisp macros mean you can skip parsing and start with the hard part directly in an AST if you design your language right!
-My starting point was coming up with a (inefficient, and, more embarrassingly,
-incorrect) rendition of a sort algorithm apparently
-called [meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
 I sketched out the beginnings of what could be a syntax based on what I had done
 so far in [sort.pseudo](../sort.pseudo). I didn't want to start with that, but if
 nothing else it might help me organize my thoughts while I attempted a sorting
 problem by hand.
 
-[^lisp]: This sloppy mess:
+Reader, I did not write this transpiler.
+
+### Problem 4: Sort
+
+Well, some of this work happened the day prior. There was a _lot_ of bashing my
+head into the wall. My starting point was coming up with a (inefficient, and,
+more embarrassingly, incorrect) rendition of a sort algorithm apparently called
+[meansort](https://dl.acm.org/doi/pdf/10.1145/2163.358088).[^lisp]
+
+[^lisp]: This li'l mess:
     ```lisp
     (defun half-sort (len l)
       (if (= 1 len)
@@ -309,9 +283,6 @@ problem by hand.
 [^author]: Speaking of <em>Little Women</em>, the (real) algorithm was apparently
     designed by Dalia Motzkin, so that's neat!
 
-
-Reader, I did not write a transpiler.
-
 My approach turned out to be misguided in several ways. First, using bonus pipes
 to signal completion immediately ran into collisions:
 
@@ -325,10 +296,10 @@ to signal completion immediately ran into collisions:
 </p>
 <p align="center"><em>Oh, that magic feeling, nowhere to go!</em></p>
 
-Thankfully, prefixing the length of the list on the same pipe works even better.
-There's a lot of busy work to do the needless copying, but elbow grease got me to
-this layout which divides a list into two lists greater than and less than the
-average (both prefixed with their own lengths).
+Thankfully, prefixing the length of the list on the same pipe works even better
+(so `1 2 3` becomes `3 1 2 3`). There's a lot of needless copying, but elbow
+grease got me to this layout which divides a list into two lists greater than and
+less than the average (both prefixed with their own lengths).
 
 <p align="center">
   <img
@@ -339,35 +310,36 @@ average (both prefixed with their own lengths).
   />
 </p>
 
-For the sort to work, I just need to recurse by feeding the two lists back into
-the first box
-in order... but now we're back to the problem of stack frames. How do I make sure
-the less thans recurse fully before the greater thans start? One thought I had
-was that, since the list will never be more than 16, you could just do it over
-and over, never returning, for 4[^log] iterations, after which each
-half MUST have fully recursed, and then pull the values out of a list that would
-look like `1 -5 1 -4 1 0 1 10`. But I'd still have to fiddle with a lot more flow
-tediousness. It started to look like this was obviously the wrong approach.
+For this to work, I just need to recurse by feeding the two lists back into the
+first box in order... but now we're back to the problem of stack frames.  How do
+I make sure the less thans fully recurse before the greater thans
+start?[^optimize]
 
-[^log]: Log base 2 of 16. This is also wrong in the worst case, anyway
+[^optimize]: One thought I had was that, since the list will never be more than
+    16, you could just do it over and over for log base 2 of n iterations, after
+    which each half MUST have fully recursed, and then pull the values out of a
+    list like `1 -5 1 -4 1 0 1 10`. But that was also wrong in the worst case
+    anyway.
 
-Discouraged, I lost a lot of my pace.
+No matter what I'd still have to fiddle with a lot more flow tediousness. It
+started to look like this was obviously the wrong approach. Discouraged, I lost
+a lot of my pace.
 
 ## Day 3
 
 ### Please, something
 
-Trying to return to my second lesson, I decided to discard the sorting problem
-completely. After all, there are points if I can just get _some_ answer to other
-problems. What if I just wrote the dumbest thing I was sure could work?
+Trying to return to my second lesson, I discarded the sorting problem completely.
+After all, getting _an_ answer to other problems was still worth points. What if
+I just wrote the dumbest thing I was sure could work?
 
 ### Problem 5: History
 
-<em>History</em> was just a program that dumped a specific sequence of
-numbers. What's the dumbest way to write it? I'm talking worst submission that
-still passes. How about a single line that has
-every number typed out and sends them one by one? [dump.lisp](../dump.lisp)
-handled that in the only actual code I wrote this contest.
+<em>History</em> was just a program that dumped a specific sequence of numbers.
+What's the dumbest way to write it? I mean worst-submission-that-still-passes
+dumb. How about a single line that has every number typed out and sends them one
+by one? [dump.lisp](../dump.lisp) handled that in the only actual code I wrote
+this contest.
 
 <p align="center">
   <img
@@ -388,18 +360,13 @@ It seems like there are several obvious ways to have improved that
 standing[^history]. But that's not what we're here for! We're doing stupid simple
 things, quickly. On to the next.
 
-[^history]: The first improvements that look obvious are just taking the square of the
-    length, adding a few rows experimentally for redirection, and compressing with
-    boustrophedon. Compressing with a different base number would probably help, as
-    might something like Huffman encoding[^huffman]. Maybe there's even something clever
-    that lets you reuse individual digits?
+[^history]: Like taking the square of the length and compressing with
+    boustrophedon. Or different bases, or Huffman encoding. Maybe there's even
+    something clever that lets you reuse individual digits?
 
-[^huffman]: Although apparently other teams considered the encoding and the space cost of
-    the codec was too much.
-
-As a bonus and reassurance at this point, I realized I could trim an instruction from _Triangle_ and finally
-condense my shape into 8x8. Not the perfect solution, but still an
-improvement![^rewrite]
+As a bonus and reassurance at this point, I realized I could trim an instruction
+from _Triangle_ and finally condense my shape into 8x8. Not the perfect solution,
+but still an improvement![^rewrite]
 
 [^rewrite]: It turns out I completely forgot that rewriting is a thing, and that
 
@@ -418,11 +385,11 @@ improvement![^rewrite]
 </p>
 
 ### Problem 2: Memory
-With the time I had left I turned back to _Memory_, in which we have
-to be able to persist and read back up to 100 values. There were two clear
-approaches: either store the numbers in a pipe (and worry about cycling through
-it) or have little men hold all the numbers. It wasn't too hard to imagine how to
-have a man whose only job was to remember:
+With the time I had left I turned back to _Memory_, in which we have to be able
+to persist and read back up to 100 values. I could either: store the numbers in a
+pipe (and worry about cycling through it) or have little men hold all the
+numbers. It wasn't too hard to imagine how to have a man whose only job was to
+remember:
 
 <p align="center">
   <img
@@ -450,13 +417,12 @@ relevant? I could.
 
 As soon as the memory was working (debugged in the final hours of the contest) it
 started to seem pretty obvious that it could be paired with machine instructions
-instead of worrying about room layouts. Whether or not I could have managed that
-approach was unclear, but it had me regretting leaving the problem until later.
+and a virtual CPU instead of worrying about room layouts. Honestly, I'm not sure
+how well I could have pulled it off, but I did regret waiting on `Memory`.
 
-I was completely out of time by then, but had already started to gain some
-fluency with the little man language. At one point I was scribbling out
-unintelligible code in
-my notebook while in a restaurant. Immersion is the best teacher!
+I was surprised to find that I had already gained some fluency with the little
+man language. At one point I was scribbling out unintelligible code in my
+notebook while in a restaurant. Immersion is the best teacher!
 
 <p align="center">
   <img
@@ -476,14 +442,40 @@ my notebook while in a restaurant. Immersion is the best teacher!
   />
 </p>
 
-
 ## The elephant
-It's AI.
+
+Yeah, it's AI. Every contestant was thinking about it. Several teams employed it
+significantly for the first time this year. The organizers explicitly
+designed the problem to be difficult to simply churn on a model, but teams with
+limited or even minimal interaction vibed into positions competitive with top
+players.
+
+It's strange--this year's contest produced such tremendous joy, yet there seems
+(to me) to be a somber air in the aftermath. If we see the same pace of
+improvement in the future, what will this sort of contest mean? Do you pivot to
+'who uses LLMs best'? Or, 'who codes the best, you know, that thing we used to
+do?' Assuming we haven't found ourselves in [much, much worse
+territory](https://huggingface.co/blog/agent-intrusion-technical-timeline) by
+then. [Centaurs](https://en.wikipedia.org/wiki/Advanced_chess) might be best today. I
+don't see a reason to expect that to continue.
+
+I'd say I wish I had an answer, but I fear I wouldn't like it.
+
+For now, I enjoyed my approach enough that I lean towards avoiding AI and
+contenting myself with the bottom of the rankings next time. If coding does
+regress to a hobby, I'd at least like to use it for goofiness like this!
 
 ## Final Thoughts
 
-At the time of the freeze, I was ranked 157 out of 268. Given my team was in the
-bottom 10% last year, I'm counting this as a significant improvement.
+At the time of the score freeze, I was ranked 157 out of 268: 40th
+percentile! Coming from the previous year's 10th percentile, I think I have no
+choice but to call this a huge success.
+
+Ironically, I wonder if I overcorrected towards taking things easy. I probably
+could have fought through at least a couple more problems or even taken a more
+ambitious tack towards the hard parts. Either way, I once again had a great time
+participating and I'm massively thankful to the organizers for their effort. I'll
+have to figure out the right balance in 2027!
 
 <p align="center">
   <img
