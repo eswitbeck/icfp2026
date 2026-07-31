@@ -82,10 +82,9 @@ yours is (it's also possible to see team ranking by problem). Scoring rewards
 small and fast (but especially small) solutions.
 
 Men walk about one space at a time, changing direction when they walk over arrows
-(`<`, `>`, `^`, `v`), 'holding' numbers, and performing operations on those
-numbers (or changing direction) depending on the characters they step on. Since
-they're constrained to one man per room[^count], they have to send numbers to
-each other through 'pipes', which I like to imagine as tin-can telephones.
+(`<`, `>`, `^`, `v`), 'holding' numbers, and performing
+operations on those numbers (or changing direction) depending on the characters they step on. Since they're constrained to one man per room[^count], they have to send numbers
+to each other through 'pipes', which I like to imagine as tin-can telephones.
 
 [^count]: In the early round, at least.
 
@@ -142,6 +141,8 @@ contest's 5am start!
 		max-width="600px"
   />
 </p>
+<p align="center"><em>Can this Cock-Pit hold / The vastie fields of...
+Indianapolis?</em></p>
 
 ## Day 1
 
@@ -150,8 +151,9 @@ contest's 5am start!
 If the debugger made approaching the problems easy, it made writing this one
 effortless. The problem is to generate the `n`th [triangular
 number](https://en.wikipedia.org/wiki/Triangular_number). If you know the trick
-to calculating these, it's a very simple formula. You don't even have to write 'real' code for this
-one--you can just put it directly in the editor!
+to calculating these it's a very simple formula. You don't even have to write
+'real' code--you can just put it directly in the editor! In the end, that's
+pretty much how all of my solutions worked.
 
 <p align="center">
   <img
@@ -315,7 +317,7 @@ I make sure the <em>less-thans</em> fully recurse before the
 start?[^optimize]
 
 [^optimize]: One thought I had was that, since the list will never be more than
-    16, you could just do it over and over for log base 2 of n iterations, after
+    16 items, you could just do it over and over for log base 2 of n iterations, after
     which each half MUST have fully recursed, and then pull the values out of a
     list like `1 -5 1 -4 1 0 1 10`. But that was also wrong in the worst case
     anyway.
