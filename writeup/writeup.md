@@ -228,9 +228,9 @@ started to make my plans off that assumption.
 
 <p align="center">
   <img
-    src="reverse.png"
+    src="reverse.gif"
     alt="Two rooms in the debugger, with a total of four pipes between them"
-    width="442px"
+    width="512px"
   />
 </p>
 <p align="center"><em>Busy and oversized, but it works!</em></p>
@@ -289,7 +289,7 @@ to signal completion immediately ran into collisions:
 
 <p align="center">
   <img
-    src="sort-failure.png"
+    src="sort-failure.gif"
     alt="Several rooms, terminating in pipes that will be forced to intersect if
     they continue"
     width="75%"
@@ -408,7 +408,7 @@ relevant? I could.
 
 <p align="center">
   <img
-    src="memory-complete.png"
+    src="memory-complete.gif"
     alt="That same room, tiled over and over"
     width="75%"
     		min-width="340px"
